@@ -3,9 +3,8 @@ const { request, response } = require("../server");
 
 const router = express.Router();
 const events = require("../usecases/events");
-const auth = require("../middlewares/auth");
 
-router.get("/", auth, async (request, response) => {
+router.get("/", async (request, response) => {
   try {
     const allEvents = await events.getAllEvents();
     response.json({
@@ -23,7 +22,7 @@ router.get("/", auth, async (request, response) => {
   }
 });
 
-router.post("/", auth, async (request, response) => {
+router.post("/", async (request, response) => {
   try {
     const newEventData = request.body;
     const newEvent = await events.createEvent(newEventData);

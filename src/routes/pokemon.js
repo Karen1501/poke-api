@@ -4,9 +4,8 @@ const express = require("express");
 
 const router = express.Router();
 const pokemons = require("../usecases/pokemons");
-const auth = require("../middlewares/auth");
 
-router.get("/", auth, async (request, response) => {
+router.get("/", async (request, response) => {
   try {
     const allPokemons = await pokemons.getAll();
     response.json({
