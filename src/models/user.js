@@ -3,7 +3,7 @@ const mongoose = require("mongoose");
 const userSchema = new mongoose.Schema({
   name: {
     type: String,
-    minlength: 5,
+    minlength: 1,
     required: true,
   },
   lastName: {
@@ -11,13 +11,9 @@ const userSchema = new mongoose.Schema({
     minlength: 5,
     required: true,
   },
-  gender: {
-    type: String,
-    required: true,
-    enum: ["male", "female", "nonbinary"],
-  },
+
   birthdate: {
-    type: Date,
+    type: String,
     required: true,
   },
   email: {

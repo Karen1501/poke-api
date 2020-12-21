@@ -9,6 +9,7 @@ const app = express();
 const pokemonsRouter = require("./routes/pokemon");
 const userRouter = require("./routes/user");
 const eventRouter = require("./routes/event");
+const teamRouter = require("./routes/team");
 const authRouter = require("./routes/auth");
 
 app.use(express.json());
@@ -18,6 +19,7 @@ app.use(cors());
 app.use("/pokemon", pokemonsRouter);
 app.use("/user", userRouter);
 app.use("/event", eventRouter);
+app.use("/team", teamRouter);
 app.use("/auth", authRouter);
 
 app.get("/", (request, response) => {
